@@ -1,0 +1,742 @@
+/* Variáveis de Cores */
+:root {
+    --primary-pink: #e2768f; /* Rosa Claro */
+    --secondary-pink: #FADCE2; /* Rosa Mais Claro */
+    --light-grey: #F8F8F8; /* Cinza Muito Claro */
+    --white: #FFFFFF;
+    --dark-text: #333333; /* Cinza Escuro para Textos */
+    --medium-text: #666666; /* Cinza Médio */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Usar uma fonte moderna */
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fonte mais elegante para títulos */
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--medium-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-pink);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFB3C7; /* Rosa um pouco mais escuro para hover */
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background-color: #FFB3C7; /* Um rosa um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+.btn-secondary { /* Estilo para botões secundários */
+    background-color: var(--dark-text);
+    color: var(--white);
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--medium-text);
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
+.btn-primary-outline { /* Botão com borda */
+    background-color: transparent;
+    color: var(--primary-pink);
+    border: 2px solid var(--primary-pink);
+}
+
+.btn-primary-outline:hover {
+    background-color: var(--primary-pink);
+    color: var(--white);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--secondary-pink);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo a { /* Adicionado para alinhar o logo e o texto */
+    color: var(--primary-pink);
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    gap: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+/* ESTILO DO SEU LOGO IMAGEM */
+.main-header .logo img {
+    height: 200px; /* Exemplo de altura, ajuste conforme preferir */
+    width: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--primary-pink);
+}
+
+.main-header .logo img:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+}
+
+/* ESTILO DO TEXTO "minha marca" */
+.main-header .logo-text {
+    font-family: 'Montserrat', sans-serif; /* Mantém a fonte elegante */
+    font-size: 1.9em; /* Ajuste o tamanho da fonte conforme o logo */
+    font-weight: bold;
+    padding: 80px;
+    color: var(--primary-pink); /* Cor do texto */
+    /* Você pode ajustar outras propriedades como letter-spacing, text-transform aqui */
+}
+
+/* Seções Padrão */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Seção Hero */
+.hero-section {
+    /* URL da imagem do herói - substituir pela sua imagem de fundo real */
+    background: url('https://oaidalleapiprod.blob.core.windows.net/private/org-v121gP3rP625iQ1kY0lFkF1D/user-Fp7Fq1tFpW62tC1b1hWn8n3C/img-d1s2s3s3f1s3e3s3e2s1s1s2s1s1s2s1s1s2s.png?st=2023-11-28T14%3A58%3A10Z&se=2023-11-28T16%3A58%3A10Z&sp=r&sv=2021-08-06&sr=b&rn=blobid&sig=7gUo5%2BB7Y3tJ9yH7gM6rM3Vf9n4e3T5o5h3C%2Fo1zXm4%3D') no-repeat center center/cover;
+    color: var(--primary-pink);
+    padding: 150px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(187, 36, 36, 0.3);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content .slogan {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: var(--primary-pink);
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--primary-pink);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: var(--dark-text);
+    font-weight: 300;
+}
+
+/* Seção Sobre Mim */
+.about-section {
+    background-color: var(--white);
+    text-align: left;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    color: var(--primary-pink);
+    font-size: 2.8em;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Seção Serviços */
+.services-section {
+    background-color: var(--secondary-pink);
+    padding-bottom: 50px;
+}
+
+.services-section h2 {
+    color: var(--dark-text);
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+    font-size: 3.5em;
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.service-card p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    color: var(--medium-text);
+}
+
+
+.service-image{
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Seção Galeria de Estúdio (NOVA) */
+.studio-gallery-section {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+.studio-gallery-section h2 {
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+.studio-gallery-section p {
+    font-size: 1.1em;
+    color: var(--medium-text);
+    margin-bottom: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px; /* Altura fixa para consistência */
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Seção Portfólio */
+.portfolio-section {
+    background-color: var(--light-grey);
+}
+
+.portfolio-section h2 {
+    color: var(--primary-pink);
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.portfolio-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.portfolio-item .img-before {
+    border-bottom: 1px solid var(--secondary-pink);
+}
+
+.portfolio-item p {
+    padding: 15px;
+    font-weight: bold;
+    color: var(--dark-text);
+    background-color: var(--white);
+    margin-bottom: 0;
+}
+
+/* Seção Depoimentos */
+.testimonials-section {
+    background-color: var(--white);
+}
+
+.testimonials-section h2 {
+    color: var(--dark-text);
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+.testimonial-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.testimonial-item {
+    background-color: var(--secondary-pink);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.testimonial-item .quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--primary-pink);
+}
+
+.client-info span {
+    font-weight: bold;
+    color: var(--dark-text);
+    font-size: 1.1em;
+}
+
+/* Seção CTA Final */
+.final-cta-section {
+    background-color: var(--primary-pink);
+    color: var(--white);
+    padding: 80px 0;
+}
+
+.final-cta-section h2 {
+    color: var(--white);
+    font-size: 3.2em;
+    margin-bottom: 20px;
+}
+
+.final-cta-section p {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    margin-top: 40px;
+    padding: 18px 35px;
+    font-size: 1.2em;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+}
+
+/* Rodapé */
+.main-footer {
+    background-color: var(--dark-text); /* Fundo cinza escuro para contraste */
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column; /* Elementos empilhados para melhor responsividade */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.main-footer p {
+    margin-bottom: 0; /* Remover margin padrão de parágrafo */
+    color: var(--white);
+    font-size: 1em;
+}
+
+.main-footer .social-links a {
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.main-footer .social-links a:hover {
+    color: var(--primary-pink); /* Cor rosa no hover */
+}
+
+
+/* --- Responsividade --- */
+
+/* Telas Grandes (Desktop) - Padrão, já definido */
+
+/* Telas Médias (Tablets) - Max-width 992px */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.6em; }
+    p { font-size: 1em; }
+
+    .main-header .logo a { /* Ajuste para tablets */
+        gap: 8px;
+    }
+    .main-header .logo-text {
+        font-size: 1.5em; /* Reduz tamanho da fonte em tablets */
+    }
+
+    .hero-section {
+        padding: 120px 0;
+        min-height: 500px;
+    }
+    .hero-content h1 {
+        font-size: 3.2em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+        text-align: center;
+    }
+    .about-image {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    .about-content h2 {
+        font-size: 2.2em;
+        margin-top: 30px;
+    }
+
+    .services-section h2,
+    .studio-gallery-section h2,
+    .portfolio-section h2,
+    .testimonials-section h2 {
+        font-size: 2.5em;
+    }
+
+    .services-grid,
+    .gallery-grid,
+    .portfolio-grid,
+    .testimonial-carousel {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+    .portfolio-item img {
+        height: 200px;
+    }
+
+    .final-cta-section h2 {
+        font-size: 2.8em;
+    }
+    .final-cta-section p {
+        font-size: 1.1em;
+    }
+}
+
+/* Telas Pequenas (Celulares) - Max-width 768px */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p { font-size: 0.95em; }
+
+    .main-header .logo img {
+        height: 35px; /* Ajusta o logo para telas menores */
+    }
+    .main-header .logo-text {
+        font-size: 1.3em; /* Reduz ainda mais a fonte em celulares */
+    }
+
+    .hero-section {
+        padding: 80px 0;
+        min-height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .services-section h2,
+    .studio-gallery-section h2,
+    .portfolio-section h2,
+    .testimonials-section h2 {
+        font-size: 2em;
+    }
+
+    .services-grid,
+    .gallery-grid,
+    .portfolio-grid,
+    .testimonial-carousel {
+        grid-template-columns: 1fr; /* Uma coluna em celulares */
+        gap: 15px;
+    }
+
+    .gallery-item img {
+        height: 180px;
+    }
+
+    .portfolio-item img {
+        height: 180px;
+    }
+
+    .testimonial-item {
+        padding: 25px;
+    }
+    .client-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .final-cta-section h2 {
+        font-size: 2em;
+    }
+    .final-cta-section p {
+        font-size: 1em;
+    }
+    .contact-info p {
+        font-size: 0.95em;
+        text-align: center;
+        flex-direction: column; /* Ícone e texto em linhas separadas para economizar espaço */
+        margin-bottom: 20px; /* Mais espaço entre itens de contato */
+    }
+     .contact-info p i {
+        margin-right: 0;
+        margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+    }
+    .btn-whatsapp {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .main-footer .social-links {
+        margin-top: 10px;
+    }
+}
+
+/* Telas Muito Pequenas (Ex: iPhone SE) - Max-width 480px */
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    p { font-size: 0.9em; }
+
+    .container {
+        padding: 15px;
+    }
+
+    .main-header .logo-text {
+        font-size: 1.1em; /* Reduz ainda mais para telas muito pequenas */
+    }
+
+    .hero-section {
+        padding: 60px 0;
+        min-height: 350px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 0.9em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .services-section h2,
+    .studio-gallery-section h2,
+    .portfolio-section h2,
+    .testimonials-section h2 {
+        font-size: 1.8em;
+    }
+
+    .service-card,
+    .gallery-item,
+    .portfolio-item,
+    .testimonial-item {
+        padding: 20px;
+    }
+
+    .gallery-item img,
+    .portfolio-item img {
+        height: 150px;
+    }
+
+    .final-cta-section h2 {
+        font-size: 1.8em;
+    }
+    .final-cta-section p {
+        font-size: 0.9em;
+    }
+    .btn-whatsapp {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
