@@ -1,14 +1,12 @@
-/* Variáveis de Cores */
 :root {
-    --primary-pink: #e2768f; /* Rosa Claro */
-    --secondary-pink: #FADCE2; /* Rosa Mais Claro */
-    --light-grey: #F8F8F8; /* Cinza Muito Claro */
+    --primary-pink: #e2768f;
+    --secondary-pink: #FADCE2;
+    --light-grey: #F8F8F8;
     --white: #FFFFFF;
-    --dark-text: #333333; /* Cinza Escuro para Textos */
-    --medium-text: #666666; /* Cinza Médio */
+    --dark-text: #333333;
+    --medium-text: #666666;
 }
 
-/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +14,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Usar uma fonte moderna */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--white);
@@ -29,7 +27,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Fonte mais elegante para títulos */
+    font-family: 'Playfair Display', serif;
     margin-bottom: 20px;
     color: var(--dark-text);
 }
@@ -51,7 +49,7 @@ a {
 }
 
 a:hover {
-    color: #FFB3C7; /* Rosa um pouco mais escuro para hover */
+    color: #FFB3C7;
 }
 
 .btn {
@@ -69,11 +67,11 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #FFB3C7; /* Um rosa um pouco mais escuro */
+    background-color: #FFB3C7;
     transform: translateY(-2px);
 }
 
-.btn-secondary { /* Estilo para botões secundários */
+.btn-secondary {
     background-color: var(--dark-text);
     color: var(--white);
     margin-top: 20px;
@@ -88,7 +86,7 @@ a:hover {
     font-size: 0.9em;
 }
 
-.btn-primary-outline { /* Botão com borda */
+.btn-primary-outline {
     background-color: transparent;
     color: var(--primary-pink);
     border: 2px solid var(--primary-pink);
@@ -99,7 +97,6 @@ a:hover {
     color: var(--white);
 }
 
-/* Header */
 .main-header {
     background-color: var(--white);
     padding: 15px 0;
@@ -112,45 +109,39 @@ a:hover {
     align-items: center;
 }
 
-.main-header .logo a { /* Adicionado para alinhar o logo e o texto */
+.main-header .logo a {
     color: var(--primary-pink);
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    gap: 10px; /* Espaçamento entre a imagem e o texto */
+    align-items: center;
+    gap: 10px;
 }
 
-/* ESTILO DO SEU LOGO IMAGEM */
 .main-header .logo img {
-    height: 200px; /* Exemplo de altura, ajuste conforme preferir */
-    width: auto; /* Mantém a proporção da imagem */
+    height: 200px;
+    width: auto;
     border-radius: 50%;
     transition: transform 0.3s ease;
     border: 1px solid var(--primary-pink);
 }
 
 .main-header .logo img:hover {
-    transform: scale(1.05); /* Efeito de zoom no hover */
+    transform: scale(1.05);
 }
 
-/* ESTILO DO TEXTO "minha marca" */
 .main-header .logo-text {
-    font-family: 'Montserrat', sans-serif; /* Mantém a fonte elegante */
-    font-size: 1.9em; /* Ajuste o tamanho da fonte conforme o logo */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9em;
     font-weight: bold;
     padding: 80px;
-    color: var(--primary-pink); /* Cor do texto */
-    /* Você pode ajustar outras propriedades como letter-spacing, text-transform aqui */
+    color: var(--primary-pink);
 }
 
-/* Seções Padrão */
 section {
     padding: 80px 0;
     text-align: center;
 }
 
-/* Seção Hero */
 .hero-section {
-    /* URL da imagem do herói - substituir pela sua imagem de fundo real */
     background: url('https://oaidalleapiprod.blob.core.windows.net/private/org-v121gP3rP625iQ1kY0lFkF1D/user-Fp7Fq1tFpW62tC1b1hWn8n3C/img-d1s2s3s3f1s3e3s3e2s1s1s2s1s1s2s1s1s2s.png?st=2023-11-28T14%3A58%3A10Z&se=2023-11-28T16%3A58%3A10Z&sp=r&sv=2021-08-06&sr=b&rn=blobid&sig=7gUo5%2BB7Y3tJ9yH7gM6rM3Vf9n4e3T5o5h3C%2Fo1zXm4%3D') no-repeat center center/cover;
     color: var(--primary-pink);
     padding: 150px 0;
@@ -203,7 +194,6 @@ section {
     font-weight: 300;
 }
 
-/* Seção Sobre Mim */
 .about-section {
     background-color: var(--white);
     text-align: left;
@@ -233,7 +223,6 @@ section {
     line-height: 1.8;
 }
 
-/* Seção Serviços */
 .services-section {
     background-color: var(--secondary-pink);
     padding-bottom: 50px;
@@ -284,14 +273,11 @@ section {
     color: var(--medium-text);
 }
 
-
 .service-image{
     width: 200px;
     height: 200px;
 }
 
-
-/* Seção Galeria de Estúdio (NOVA) */
 .studio-gallery-section {
     background-color: var(--white);
     padding: 80px 0;
@@ -329,13 +315,11 @@ section {
 
 .gallery-item img {
     width: 100%;
-    height: 280px; /* Altura fixa para consistência */
+    height: 280px;
     object-fit: cover;
     display: block;
 }
 
-
-/* Seção Portfólio */
 .portfolio-section {
     background-color: var(--light-grey);
 }
@@ -379,7 +363,6 @@ section {
     margin-bottom: 0;
 }
 
-/* Seção Depoimentos */
 .testimonials-section {
     background-color: var(--white);
 }
@@ -435,7 +418,6 @@ section {
     font-size: 1.1em;
 }
 
-/* Seção CTA Final */
 .final-cta-section {
     background-color: var(--primary-pink);
     color: var(--white);
@@ -478,9 +460,8 @@ section {
     background-color: #1DA851;
 }
 
-/* Rodapé */
 .main-footer {
-    background-color: var(--dark-text); /* Fundo cinza escuro para contraste */
+    background-color: var(--dark-text);
     color: var(--white);
     padding: 40px 0;
     text-align: center;
@@ -489,14 +470,14 @@ section {
 
 .main-footer .container {
     display: flex;
-    flex-direction: column; /* Elementos empilhados para melhor responsividade */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Espaçamento entre os elementos */
+    gap: 15px;
 }
 
 .main-footer p {
-    margin-bottom: 0; /* Remover margin padrão de parágrafo */
+    margin-bottom: 0;
     color: var(--white);
     font-size: 1em;
 }
@@ -509,26 +490,20 @@ section {
 }
 
 .main-footer .social-links a:hover {
-    color: var(--primary-pink); /* Cor rosa no hover */
+    color: var(--primary-pink);
 }
 
-
-/* --- Responsividade --- */
-
-/* Telas Grandes (Desktop) - Padrão, já definido */
-
-/* Telas Médias (Tablets) - Max-width 992px */
 @media (max-width: 992px) {
     h1 { font-size: 2.8em; }
     h2 { font-size: 2.2em; }
     h3 { font-size: 1.6em; }
     p { font-size: 1em; }
 
-    .main-header .logo a { /* Ajuste para tablets */
+    .main-header .logo a {
         gap: 8px;
     }
     .main-header .logo-text {
-        font-size: 1.5em; /* Reduz tamanho da fonte em tablets */
+        font-size: 1.5em;
     }
 
     .hero-section {
@@ -543,7 +518,7 @@ section {
     }
 
     .about-grid {
-        grid-template-columns: 1fr; /* Coluna única em telas menores */
+        grid-template-columns: 1fr;
         text-align: center;
     }
     .about-image {
@@ -586,7 +561,6 @@ section {
     }
 }
 
-/* Telas Pequenas (Celulares) - Max-width 768px */
 @media (max-width: 768px) {
     h1 { font-size: 2.2em; }
     h2 { font-size: 1.8em; }
@@ -594,10 +568,10 @@ section {
     p { font-size: 0.95em; }
 
     .main-header .logo img {
-        height: 35px; /* Ajusta o logo para telas menores */
+        height: 50px;
     }
     .main-header .logo-text {
-        font-size: 1.3em; /* Reduz ainda mais a fonte em celulares */
+        font-size: 1.3em;
     }
 
     .hero-section {
@@ -630,7 +604,7 @@ section {
     .gallery-grid,
     .portfolio-grid,
     .testimonial-carousel {
-        grid-template-columns: 1fr; /* Uma coluna em celulares */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
@@ -659,12 +633,12 @@ section {
     .contact-info p {
         font-size: 0.95em;
         text-align: center;
-        flex-direction: column; /* Ícone e texto em linhas separadas para economizar espaço */
-        margin-bottom: 20px; /* Mais espaço entre itens de contato */
+        flex-direction: column;
+        margin-bottom: 20px;
     }
      .contact-info p i {
         margin-right: 0;
-        margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+        margin-bottom: 5px;
     }
     .btn-whatsapp {
         font-size: 1em;
@@ -676,7 +650,6 @@ section {
     }
 }
 
-/* Telas Muito Pequenas (Ex: iPhone SE) - Max-width 480px */
 @media (max-width: 480px) {
     h1 { font-size: 1.8em; }
     h2 { font-size: 1.5em; }
@@ -688,7 +661,11 @@ section {
     }
 
     .main-header .logo-text {
-        font-size: 1.1em; /* Reduz ainda mais para telas muito pequenas */
+        font-size: 1.1em;
+    }
+
+    .main-header .logo img {
+        height: 45px;
     }
 
     .hero-section {
