@@ -1,5 +1,5 @@
 :root {
-    --primary-pink: #e2768f;
+    --primary-pink: #f66a8a;
     --secondary-pink: #FADCE2;
     --light-grey: #F8F8F8;
     --white: #FFFFFF;
@@ -7,6 +7,7 @@
     --medium-text: #666666;
 }
 
+/* Reset básico e configurações de fonte */
 * {
     margin: 0;
     padding: 0;
@@ -18,14 +19,30 @@ body {
     line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--white);
+    position: relative; /* Necessário para o posicionamento do botão flutuante */
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-pink);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ee24c9;
+}
+
+/* Container para centralizar conteúdo */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Estilos para títulos */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 20px;
@@ -36,12 +53,14 @@ h1 { font-size: 3em; }
 h2 { font-size: 2.5em; }
 h3 { font-size: 1.8em; }
 
+/* Estilos para parágrafos */
 p {
     margin-bottom: 15px;
     font-size: 1.1em;
     color: var(--medium-text);
 }
 
+/* Estilos para links gerais */
 a {
     text-decoration: none;
     color: var(--primary-pink);
@@ -52,10 +71,11 @@ a:hover {
     color: #FFB3C7;
 }
 
+/* Estilos base para botões */
 .btn {
     display: inline-block;
-    background-color: var(--primary-pink);
-    color: var(--white);
+    background-color: var(--light-grey);
+    color: var(--primary-pink);
     padding: 15px 30px;
     border-radius: 50px;
     font-weight: bold;
@@ -67,10 +87,11 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #FFB3C7;
-    transform: translateY(-2px);
+    background-color: #d92c5a;
+    transform: translateY(-1px);
 }
 
+/* Variações de botões */
 .btn-secondary {
     background-color: var(--dark-text);
     color: var(--white);
@@ -97,10 +118,13 @@ a:hover {
     color: var(--white);
 }
 
+/* --- HEADER E NAVEGAÇÃO --- */
 .main-header {
     background-color: var(--white);
     padding: 15px 0;
     border-bottom: 1px solid var(--secondary-pink);
+    position: relative; /* Para posicionar o menu sanduíche mobile */
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros conteúdos */
 }
 
 .main-header .container {
@@ -109,6 +133,7 @@ a:hover {
     align-items: center;
 }
 
+/* Estilos do logo */
 .main-header .logo a {
     color: var(--primary-pink);
     display: flex;
@@ -117,11 +142,11 @@ a:hover {
 }
 
 .main-header .logo img {
-    height: 200px;
-    width: auto;
+    height: 200px; /* Ajustado para um tamanho mais adequado no cabeçalho */
+    width: 200px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
-    border: 1px solid var(--primary-pink);
+    transition: transform 0.5s ease;
+    
 }
 
 .main-header .logo img:hover {
@@ -132,68 +157,192 @@ a:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.9em;
     font-weight: bold;
-    padding: 80px;
+    padding: 0 10px;
     color: var(--primary-pink);
 }
 
+/* Estilos para a navegação principal (menu desktop) */
+.main-nav {
+    display: flex; /* Para alinhar o menu e o sanduíche */
+    align-items: center;
+    /* Removi o padding-top: -20px; pois valores negativos em padding não são válidos */
+    /* Para descer o menu, ajuste o padding do .main-header ou margin-top do .nav-list */
+}
+
+.nav-list {
+    position: relative;
+    list-style: none;
+    display: flex; /* Exibe os itens do menu lado a lado em desktop */
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-list li a {
+    color: var(--primary-pink);
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    background-color: var(--primary-pink);
+    color: var(--white);
+}
+
+/* Esconde o checkbox e o ícone de sanduíche por padrão (desktop) */
+.menu-toggle {
+    display: none;
+}
+
+.menu-sandwich {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px; /* Espaço para o ícone do sanduíche */
+}
+
+.menu-sandwich span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #eb3868bc; /* Um tom de rosa mais escuro */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- Botões Flutuantes (Fixed Buttons) --- */
+.floating-buttons-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex; /* Agora sempre visível (flex) */
+    gap: 10px; /* Espaço entre os botões */
+    /* Removido `display: none;` daqui, agora sempre visível */
+}
+
+/* Estilos para o botão flutuante de agendamento */
+.btn-floating-schedule {
+    background-color: #25D366; /* Verde WhatsApp, para diferenciar visualmente o agendamento */
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+}
+
+.btn-floating-schedule:hover {
+    background-color: #1DA851; /* Tom mais escuro do verde */
+    transform: translateY(-2px);
+}
+
+/* Estilos para o botão flutuante de voltar ao topo */
+.btn-floating-top {
+    background-color: var(--primary-pink); /* Cor de destaque */
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 55px;   /* Largura fixa para um botão redondo */
+    height: 55px;  /* Altura fixa para um botão redondo */
+    border-radius: 50%; /* Torna-o redondo */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Tamanho do ícone */
+}
+
+.btn-floating-top:hover {
+    background-color: #d92c5a; /* Tom mais escuro do rosa */
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÕES GERAIS --- */
 section {
     padding: 80px 0;
     text-align: center;
 }
 
+/* --- HERO SECTION --- */
 .hero-section {
-    background: url('https://oaidalleapiprod.blob.core.windows.net/private/org-v121gP3rP625iQ1kY0lFkF1D/user-Fp7Fq1tFpW62tC1b1hWn8n3C/img-d1s2s3s3f1s3e3s3e2s1s1s2s1s1s2s1s1s2s.png?st=2023-11-28T14%3A58%3A10Z&se=2023-11-28T16%3A58%3A10Z&sp=r&sv=2021-08-06&sr=b&rn=blobid&sig=7gUo5%2BB7Y3tJ9yH7gM6rM3Vf9n4e3T5o5h3C%2Fo1zXm4%3D') no-repeat center center/cover;
-    color: var(--primary-pink);
-    padding: 150px 0;
-    position: relative;
+    background-color: var(--primary-pink); /* Mudei para secondary-pink para melhor contraste com o texto */
+    padding: 80px 0;
+    min-height: 700px; /* Aumentei min-height para acomodar imagem maior e texto */
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 600px;
+    position: relative;
 }
 
+/* Remover o pseudo-elemento antes se não for usado */
 .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(187, 36, 36, 0.3);
+    content: none;
 }
 
 .hero-section .container {
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    width: 100%;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    order: 1;
+    padding: 20px;
 }
 
 .hero-content .slogan {
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 2rem;
+    font-weight: 400;
     margin-bottom: 10px;
-    color: var(--primary-pink);
+    color: var(--primary-pink); /* Slogan em primary-pink */
 }
 
 .hero-content h1 {
     font-size: 4em;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--primary-pink);
+    color: var(--dark-text); /* Título principal em dark-text */
 }
 
 .hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 40px;
-    color: var(--dark-text);
-    font-weight: 300;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: var(--medium-text); /* Texto em medium-text */
 }
 
+.hero-image {
+    flex: 1;
+    max-width: 350px; /* Mantive 350px para não ser muito maior que o texto */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    order: 2;
+    display: block;
+    overflow: hidden; /* Garante que a imagem dentro da div também se arredonde */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Para as bordas da imagem */
+    object-fit: cover;
+    max-height: 600px; /* Ajustado para 600px conforme solicitado */
+}
+
+/* --- ABOUT SECTION --- */
 .about-section {
     background-color: var(--white);
     text-align: left;
@@ -223,8 +372,9 @@ section {
     line-height: 1.8;
 }
 
+/* --- SERVICES SECTION --- */
 .services-section {
-    background-color: var(--secondary-pink);
+    background-color: var(--light-grey); /* Mudei para light-grey */
     padding-bottom: 50px;
 }
 
@@ -242,10 +392,10 @@ section {
 }
 
 .service-card {
-    background-color: var(--white);
+    background-color: var(--primary-pink);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(181, 7, 211, 0.994);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -255,10 +405,12 @@ section {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.service-icon {
-    font-size: 3.5em;
-    color: var(--primary-pink);
-    margin-bottom: 20px;
+.service-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Espaço entre a imagem e o título do serviço */
 }
 
 .service-card h3 {
@@ -273,18 +425,14 @@ section {
     color: var(--medium-text);
 }
 
-.service-image{
-    width: 200px;
-    height: 200px;
-}
-
+/* --- GALLERY SECTION --- */
 .studio-gallery-section {
-    background-color: var(--white);
+    background-color: var(--secondary-pink); /* Mudei para secondary-pink */
     padding: 80px 0;
 }
 
 .studio-gallery-section h2 {
-    color: var(--primary-pink);
+    color: var(--dark-text); /* Cor do título para contraste */
     margin-bottom: 20px;
     font-size: 3em;
 }
@@ -320,8 +468,9 @@ section {
     display: block;
 }
 
+/* --- PORTFOLIO SECTION --- */
 .portfolio-section {
-    background-color: var(--light-grey);
+    background-color: var(--white); /* Mudei para white */
 }
 
 .portfolio-section h2 {
@@ -338,7 +487,7 @@ section {
 }
 
 .portfolio-item {
-    background-color: var(--white);
+    background-color: var(--light-grey); /* Mudei para light-grey */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -359,12 +508,13 @@ section {
     padding: 15px;
     font-weight: bold;
     color: var(--dark-text);
-    background-color: var(--white);
+    background-color: var(--light-grey); /* Mudei para light-grey */
     margin-bottom: 0;
 }
 
+/* --- TESTIMONIALS SECTION --- */
 .testimonials-section {
-    background-color: var(--white);
+    background-color: var(--light-grey); /* Mudei para light-grey */
 }
 
 .testimonials-section h2 {
@@ -381,7 +531,7 @@ section {
 }
 
 .testimonial-item {
-    background-color: var(--secondary-pink);
+    background-color: var(--white); /* Mudei para white */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -418,6 +568,7 @@ section {
     font-size: 1.1em;
 }
 
+/* --- FINAL CTA SECTION --- */
 .final-cta-section {
     background-color: var(--primary-pink);
     color: var(--white);
@@ -450,16 +601,17 @@ section {
 }
 
 .btn-whatsapp {
-    background-color: #25D366;
+    background-color: #25D366; /* Voltei o WhatsApp para verde */
     margin-top: 40px;
     padding: 18px 35px;
     font-size: 1.2em;
 }
 
 .btn-whatsapp:hover {
-    background-color: #1DA851;
+    background-color: #1DA851; /* Tom mais escuro do verde */
 }
 
+/* --- FOOTER --- */
 .main-footer {
     background-color: var(--dark-text);
     color: var(--white);
@@ -493,6 +645,7 @@ section {
     color: var(--primary-pink);
 }
 
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
 @media (max-width: 992px) {
     h1 { font-size: 2.8em; }
     h2 { font-size: 2.2em; }
@@ -502,21 +655,110 @@ section {
     .main-header .logo a {
         gap: 8px;
     }
+    .main-header .logo img {
+        height: 70px;
+        width: 70px;
+    }
     .main-header .logo-text {
         font-size: 1.5em;
+        padding: 0 5px;
     }
 
+    /* Esconde o menu de desktop */
+    .nav-list {
+        display: none;
+    }
+
+    /* Mostra o ícone de sanduíche */
+    .menu-sandwich {
+        display: flex;
+        margin-left: auto;
+        
+    }
+
+    /* Estilos do menu sanduíche aberto */
+    .menu-toggle:checked ~ .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-top: 1px solid var(--secondary-pink);
+        z-index: 99;
+    }
+    .menu-toggle:checked ~ .nav-list li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .menu-toggle:checked ~ .nav-list li a {
+        display: block;
+        padding: 15px;
+        color: var(--dark-text);
+    }
+    .menu-toggle:checked ~ .nav-list li a:hover {
+        background-color: var(--secondary-pink);
+        color: var(--primary-pink);
+    }
+
+    /* Animação do ícone de sanduíche para o "X" */
+    .menu-toggle:checked ~ .menu-sandwich span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked ~ .menu-sandwich span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-sandwich span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Ajustes de tamanho para os botões flutuantes em mobile */
+    .btn-floating-schedule {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .btn-floating-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+    }
+
+    /* Ajustes da seção Hero */
     .hero-section {
-        padding: 120px 0;
-        min-height: 500px;
+        padding: 60px 0;
+        min-height: auto;
+    }
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-content {
+        max-width: 90%;
+        text-align: center;
+        order: 1;
+        padding: 0;
     }
     .hero-content h1 {
-        font-size: 3.2em;
+        font-size: 2.8em;
     }
     .hero-content p {
-        font-size: 1.2em;
+        font-size: 1.1em;
+    }
+    .hero-image {
+        max-width: 70%;
+        order: 2;
+    }
+    .hero-image img {
+        width: 100%;
+        height: auto;
     }
 
+    /* Ajustes da seção About */
     .about-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -530,6 +772,7 @@ section {
         margin-top: 30px;
     }
 
+    /* Ajustes de outras seções com títulos e grids */
     .services-section h2,
     .studio-gallery-section h2,
     .portfolio-section h2,
@@ -568,21 +811,25 @@ section {
     p { font-size: 0.95em; }
 
     .main-header .logo img {
-        height: 50px;
+        height: 60px;
+        width: 60px;
     }
     .main-header .logo-text {
         font-size: 1.3em;
+        padding: 0 5px;
     }
 
     .hero-section {
-        padding: 80px 0;
-        min-height: 400px;
+        padding: 40px 0;
     }
     .hero-content h1 {
         font-size: 2.5em;
     }
     .hero-content p {
         font-size: 1em;
+    }
+    .hero-image {
+        max-width: 80%;
     }
     .btn {
         padding: 12px 25px;
@@ -633,7 +880,7 @@ section {
     .contact-info p {
         font-size: 0.95em;
         text-align: center;
-        flex-direction: column;
+        flex-direction: column; /* Icone acima do texto */
         margin-bottom: 20px;
     }
      .contact-info p i {
@@ -662,21 +909,25 @@ section {
 
     .main-header .logo-text {
         font-size: 1.1em;
+        padding: 0 2px;
     }
 
     .main-header .logo img {
-        height: 45px;
+        height: 55px;
+        width: 55px;
     }
 
     .hero-section {
-        padding: 60px 0;
-        min-height: 350px;
+        padding: 30px 0;
     }
     .hero-content h1 {
         font-size: 2em;
     }
     .hero-content p {
         font-size: 0.9em;
+    }
+    .hero-image {
+        max-width: 90%;
     }
     .btn {
         padding: 10px 20px;
